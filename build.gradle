@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.0'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+test {
+    useJUnitPlatform()
+}
+
+bootRun.environment([
+    "WELCOME_MESSAGE": "howdy",
+])
+
+test.environment([
+    "WELCOME_MESSAGE": "Hello from test",
+])
