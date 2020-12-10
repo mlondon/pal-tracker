@@ -11,10 +11,10 @@ applications:
   health-check-type: port
   timeout: 60
   routes:
-  - route: pal-tracker-mrlondon.apps.evans.pal.pivotal.io
+  - route: pal-tracker-${UNIQUE_IDENTIFIER}.${DOMAIN}
+  services:
+  - tracker-database
   env:
     WELCOME_MESSAGE: Hello from the review environment
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 250 } }'
     MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: 'info,health,palTrackerFailure'
-  services:
-  - tracker-database
