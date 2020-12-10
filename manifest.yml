@@ -11,7 +11,7 @@ applications:
   health-check-type: port
   timeout: 60
   routes:
-  - route: pal-tracker-${UNIQUE_IDENTIFIER}.${DOMAIN}
+  - route: pal-tracker-mrlondon.apps.evans.pal.pivotal.io
   services:
   - tracker-database
   env:
